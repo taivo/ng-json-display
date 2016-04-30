@@ -12,3 +12,17 @@ angular.module('myApp', ['ngJsonDisplay'])
 ```html
 <json-display></json-display>
 ```
+
+3. Set up css classes
+```css
+/* default css */
+.ng-json-display .json-key {
+  color: brown;
+}
+.ng-json-display .json-value {
+  color: navy;
+}
+.ng-json-display .json-string {
+  color: olive;
+}
+```

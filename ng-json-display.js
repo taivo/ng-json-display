@@ -5,19 +5,10 @@ angular.module('ngJsonDisplay', ['ngSanitize'])
     //Credit: expanded upon code found at http://jsfiddle.net/unlsj/
     // and created angular directive
     //
-    _defaultSettings: {
-      jsonKey: 'json-key',
-      jsonVal: 'json-value',
-      jsonStr: 'json-string'
-    },
-    _activeSettings: {},
-    _getSetting: function(settingsKey){
-      return JSONUtil._activeSettings[settingsKey] || JSONUtil._defaultSettings[settingsKey];
-    },
     replacer: function(match, pIndent, pKey, pVal, pEnd) {
-       var key = ['<span class="', JSONUtil._getSetting('jsonKey'), '">'].join('');
-       var val = ['<span class="', JSONUtil._getSetting('jsonVal'), '">'].join('');
-       var str = ['<span class="', JSONUtil._getSetting('jsonStr'), '">'].join('');
+       var key = '<span class="json-key">';
+       var val = '<span class="json-value">';
+       var str = '<span class="json-string">';
        var r = pIndent || '';
        if (pKey)
           r = r + key + pKey.replace(/[": ]/g, '') + '</span>: ';
@@ -25,14 +16,10 @@ angular.module('ngJsonDisplay', ['ngSanitize'])
           r = r + (pVal[0] == '"' ? str : val) + pVal + '</span>';
        return r + (pEnd || '');
     },
-    prettyPrint: function(obj, cssClasses) {
+    prettyPrint: function(obj) {
       if(obj === undefined){
         return '';
       } else{
-        //
-        // set css classes for the replacer
-        angular.extend(JSONUtil._activeSettings, cssClasses);
-
         //
         // carry out quickie replacement
         var jsonLine = /^( *)("[\w]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/mg;
@@ -60,15 +47,10 @@ angular.module('ngJsonDisplay', ['ngSanitize'])
       valueClass: '@',
       stringClass: '@',
     },
-    template: "<pre ng-bind-html='jsonHtml'></pre>",
+    template: "<pre class='ng-json-display' ng-bind-html='jsonHtml'></pre>",
     link: function(scope, elm, attrs){
-      var cssClasses = {
-        jsonKey: scope.keyClass,
-        jsonVal: scope.valueClass,
-        jsonStr: scope.stringClass
-      }
       scope.$watchCollection('object', function(newObj){
-        scope.jsonHtml = $jsonUtil.prettyPrint(newObj, cssClasses);
+        scope.jsonHtml = $jsonUtil.prettyPrint(newObj);
       })
     },
 
