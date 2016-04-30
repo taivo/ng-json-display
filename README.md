@@ -5,15 +5,15 @@ Easily display json as html. Requires angularSanitize
 
 1. Add angular dependency to your app
 ```Javascript
-angular.module('myApp', ['ngJsonDisplay'])
+angular.module('myApp', ['ngSanitize','ngJsonDisplay'])
 ```
 
 2. Use it in your templates
 ```html
-<json-display></json-display>
+<json-display object='myJsonObj'></json-display>
 ```
 
-3. Set up css classes
+3. Define css classes
 ```css
 /* default css */
 .ng-json-display .json-key {
