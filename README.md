@@ -1,5 +1,5 @@
 # ng-json-display
-Nicely display json as html. Requires angularSanitize
+Easily display json as html. Requires angularSanitize
 
 # Usage
 

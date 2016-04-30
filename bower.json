@@ -1,0 +1,25 @@
+{
+  "name": "ng-json-display",
+  "main": "ng-json-display.js",
+  "homepage": "https://github.com/taivo/ng-json-display",
+  "authors": [
+    "taivo"
+  ],
+  "description": "Easily display json as html via an angular directive",
+  "keywords": [
+    "json",
+    "pretty",
+    "display",
+    "angularjs",
+    "angular",
+    "directive"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
