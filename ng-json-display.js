@@ -68,7 +68,6 @@ angular.module('ngJsonDisplay', ['ngSanitize'])
         jsonStr: scope.stringClass
       }
       scope.$watchCollection('object', function(newObj){
-        console.log(newObj)
         scope.jsonHtml = $jsonUtil.prettyPrint(newObj, cssClasses);
       })
     },
