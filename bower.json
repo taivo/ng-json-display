@@ -1,6 +1,7 @@
 {
   "name": "ng-json-display",
-  "main": "ng-json-display.js",
+  "version": "0.1.0",
+  "main": "dist/ng-json-display.min.js",
   "homepage": "https://github.com/taivo/ng-json-display",
   "authors": [
     "taivo"
@@ -14,9 +15,14 @@
     "angular",
     "directive"
   ],
+  "dependencies": {
+    "angular": "1.x",
+    "angular-sanitize": "1.x"
+  },
   "license": "MIT",
   "ignore": [
     "**/.*",
+    "gulpfile.js",
     "node_modules",
     "bower_components",
     "test",
