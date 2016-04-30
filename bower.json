@@ -1,7 +1,7 @@
 {
   "name": "ng-json-display",
   "version": "0.1.0",
-  "main": "dist/ng-json-display.min.js",
+  "main": "src/ng-json-display.js",
   "homepage": "https://github.com/taivo/ng-json-display",
   "authors": [
     "taivo"
@@ -9,11 +9,13 @@
   "description": "Easily display json as html via an angular directive",
   "keywords": [
     "json",
+    "html",
     "pretty",
+    "prettify",
+    "prettyprint",
     "display",
     "angularjs",
-    "angular",
-    "directive"
+    "angular"
   ],
   "dependencies": {
     "angular": "1.x",
@@ -22,10 +24,10 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
-    "gulpfile.js",
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "gulpfile.js"
   ]
 }
